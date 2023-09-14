@@ -9,9 +9,9 @@ public class TestBinaryTreeNode {
     @DisplayName("Teste - Criação do Nó da Árvore Binária com value")
     public void testBinaryTreeNodeValue() {
         BinaryTreeNode node = new BinaryTreeNode(1);
-        assert node.value == 1;
-        assert node.left == null;
-        assert node.right == null;
+        assert node.getValue() == 1;
+        assert node.getLeft() == null;
+        assert node.getRight() == null;
 
     }
 
@@ -19,9 +19,9 @@ public class TestBinaryTreeNode {
     @DisplayName("Teste - Criação do Nó da Árvore Binária sem value")
     public void testBinaryTreeNode() {
         BinaryTreeNode node = new BinaryTreeNode();
-        assert node.value == 0;
-        assert node.left == null;
-        assert node.right == null;
+        assert node.getValue() == 0;
+        assert node.getLeft() == null;
+        assert node.getRight() == null;
 
     }
 
@@ -29,11 +29,110 @@ public class TestBinaryTreeNode {
     @DisplayName("Teste - Criação do Nó da Árvore Binária com value, left e right")
     public void testBinaryTreeNodeValueLeftRight() {
         BinaryTreeNode node = new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3));
-        assert node.value == 1;
-        assert node.left.value == 2;
-        assert node.right.value == 3;
+        assert node.getValue() == 1;
+        assert node.getLeft().getValue() == 2;
+        assert node.getRight().getValue() == 3;
 
     }
+
+    @Test
+    @DisplayName("Teste - Has Left")
+    void hasLeft() {
+        BinaryTreeNode node = new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3));
+        assert node.hasLeft();
+
+        node.setLeft(null);
+        assert !node.hasLeft();
+
+        BinaryTreeNode node2 = new BinaryTreeNode(1);
+        assert !node2.hasLeft();
+    }
+
+    @Test
+    @DisplayName("Teste - Has Right")
+    void hasRight() {
+        BinaryTreeNode node = new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3));
+        assert node.hasRight();
+
+        node.setRight(null);
+        assert !node.hasRight();
+
+        BinaryTreeNode node2 = new BinaryTreeNode(1);
+        assert !node2.hasRight();
+    }
+
+    @Test
+    @DisplayName("Teste - Is Leaf")
+    void isLeaf() {
+        BinaryTreeNode node = new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3));
+        assert !node.isLeaf();
+
+        node.setLeft(null);
+        node.setRight(null);
+        assert node.isLeaf();
+
+        BinaryTreeNode node2 = new BinaryTreeNode(1);
+        assert node2.isLeaf();
+    }
+
+    @Test
+    @DisplayName("Teste - Has One Child")
+    void hasOneChild() {
+        BinaryTreeNode node = new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3));
+        assert !node.hasOneChild();
+
+        node.setLeft(null);
+        assert node.hasOneChild();
+
+        BinaryTreeNode node2 = new BinaryTreeNode(1);
+        assert !node2.hasOneChild();
+    }
+
+    @Test
+    @DisplayName("Teste - Has Two Children")
+    void hasTwoChildren() {
+        BinaryTreeNode node = new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3));
+        assert node.hasTwoChildren();
+
+        node.setLeft(null);
+        assert !node.hasTwoChildren();
+
+        node.setLeft(new BinaryTreeNode(2));
+        assert node.hasTwoChildren();
+    }
+
+    @Test
+    void hasChildren() {
+        BinaryTreeNode node = new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3));
+        assert node.hasChildren();
+
+        node.setLeft(null);
+        assert node.hasChildren();
+
+        node.setLeft(new BinaryTreeNode(2));
+        assert node.hasChildren();
+
+        node.setLeft(null);
+        node.setRight(null);
+        assert !node.hasChildren();
+    }
+
+    @Test
+    void testToString() {
+        BinaryTreeNode node = new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3));
+        assert node.toString().equals("1");
+
+        node.setLeft(null);
+        assert node.toString().equals("1");
+
+        node.setLeft(new BinaryTreeNode(2));
+        assert node.toString().equals("1");
+
+        node.setLeft(null);
+        node.setRight(null);
+        assert node.toString().equals("1");
+    }
+
 
 
 }
