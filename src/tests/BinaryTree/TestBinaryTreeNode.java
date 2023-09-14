@@ -102,6 +102,7 @@ public class TestBinaryTreeNode {
     }
 
     @Test
+    @DisplayName("Teste - Has Children")
     void hasChildren() {
         BinaryTreeNode node = new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3));
         assert node.hasChildren();
@@ -118,6 +119,7 @@ public class TestBinaryTreeNode {
     }
 
     @Test
+    @DisplayName("Teste - To String")
     void testToString() {
         BinaryTreeNode node = new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3));
         assert node.toString().equals("1");
@@ -134,5 +136,17 @@ public class TestBinaryTreeNode {
     }
 
 
+    @Test
+    @DisplayName("Teste - Get Value")
+    void setRoot() {
+    }
 
+    @Test
+    @DisplayName("Teste - Get Left")
+    void isEmpty() {
+    }
+
+    @Test
+    void posOrder() {
+    }
 }
