@@ -79,7 +79,7 @@ public class CircularDoublyLinkedList<T> {
             new_node.setNext(this.ward);
             new_node.setPrevious(this.ward);
         }
-        else if(index < 0 || index >= this.getSize()){
+        else if(index < 0 || index > this.getSize()){
             System.out.println("Index deve estar entre 0 e " + String.valueOf(this.size - 1));
             return ;
         }
@@ -88,7 +88,7 @@ public class CircularDoublyLinkedList<T> {
             new_node.setNext(this.ward.getNext());
             this.ward.setNext(new_node);
             new_node.setPrevious(this.ward);
-        }else if(index == this.size - 1){
+        }else if(index == this.size){
             this.ward.getPrevious().setNext(new_node);
             new_node.setPrevious(new_node);
             this.ward.setPrevious(new_node);
@@ -96,7 +96,7 @@ public class CircularDoublyLinkedList<T> {
         }else{
             Node<T> aux_previous = this.ward.getNext();
             Node<T> aux_next = aux_previous.getNext();
-            for(int i = 0; i < index - 2; i++){
+            for(int i = 0; i < index - 1; i++){
                 aux_previous = aux_next;
                 aux_next = aux_previous.getNext();
             }
@@ -144,4 +144,14 @@ public class CircularDoublyLinkedList<T> {
         this.size--;
         return value;
     }
+
+    public void printFirst(){
+        System.out.println(this.ward.getNext().getValue());
+    }
+    
+    public void printLast(){
+        System.out.println(this.ward.getPrevious().getValue());
+    }
+
 }
+

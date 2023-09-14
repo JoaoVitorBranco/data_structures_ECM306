@@ -89,7 +89,7 @@ public class TestCircularDoublyLinkedList {
         System.out.println("Lista deve conter 1 elemento: " + String.valueOf(cdlk4.getSize() == 1));
         
         
-        System.out.println("====== Teste DoublyLinkedList - método \"delete\" ======");
+        System.out.println("====== Teste DoublyLinkedList - método \"pop\" ======");
         System.out.println("Para a lista: ");
         cdlk1.printList();
         
@@ -99,14 +99,14 @@ public class TestCircularDoublyLinkedList {
         System.out.println("E deve ter retornado valor 0: " + String.valueOf(val1 == 0));
         
         Integer val2 = cdlk1.pop(3);
-        System.out.println("Deve ter removido valor 100 do index 2: ");
+        System.out.println("Deve ter removido valor 2 do index 2: ");
         cdlk1.printList();
-        System.out.println("E deve ter retornado valor 100: " + String.valueOf(val2 == 100));
+        System.out.println("E deve ter retornado valor 2: " + String.valueOf(val2 == 2));
         
         Integer val3 = cdlk1.pop(cdlk1.getSize() - 1);
-        System.out.println("Deve ter removido valor 5 do último index: ");
+        System.out.println("Deve ter removido valor 4 do último index: ");
         cdlk1.printList();
-        System.out.println("E deve ter retornado valor 5: " + String.valueOf(val3 == 5));
+        System.out.println("E deve ter retornado valor 4: " + String.valueOf(val3 == 4));
         
         Integer val6 = cdlk1.pop(1);
         System.out.println("Deve ter removido valor 1 do index 1: ");
@@ -129,5 +129,17 @@ public class TestCircularDoublyLinkedList {
         cdlk2.printList();
         System.out.println("E deve ter retornado valor 0: " + String.valueOf(val5 == 0));
         System.out.println("Lista deve conter 0 elementos: " + String.valueOf(cdlk4.getSize() == 0));
+        
+        System.out.println("====== Teste DoublyLinkedList - método \"printFirst\" ======");
+        System.out.println("Para a lista: ");
+        cdlk1.printList();
+        cdlk1.printFirst();
+        
+        System.out.println("====== Teste DoublyLinkedList - método \"printLast\" ======");
+        System.out.println("Para a lista: ");
+        cdlk1.printList();
+        cdlk1.printLast();
+
     }
+
 }
