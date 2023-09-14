@@ -84,7 +84,7 @@ public class TestDoublyLinkedList {
         System.out.println("Lista deve conter 1 elemento: " + String.valueOf(dlk3.getSize() == 1));
         
         
-        System.out.println("====== Teste DoublyLinkedList - método \"delete\" ======");
+        System.out.println("====== Teste DoublyLinkedList - método \"pop\" ======");
         System.out.println("Para a lista: ");
         dlk1.printList();
         
@@ -99,9 +99,9 @@ public class TestDoublyLinkedList {
         System.out.println("E deve ter retornado valor 100: " + String.valueOf(val2 == 100));
         
         Integer val3 = dlk1.pop(dlk1.getSize() - 1);
-        System.out.println("Deve ter removido valor 5 do último index: ");
+        System.out.println("Deve ter removido valor 4 do último index: ");
         dlk1.printList();
-        System.out.println("E deve ter retornado valor 5: " + String.valueOf(val3 == 5));
+        System.out.println("E deve ter retornado valor 4: " + String.valueOf(val3 == 4));
         
         Integer val6 = dlk1.pop(1);
         System.out.println("Deve ter removido valor 1 do index 1: ");
