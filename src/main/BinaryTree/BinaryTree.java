@@ -125,4 +125,30 @@ public class BinaryTree {
         }
         return false;
     }
+
+    public int getMax() {
+        return getMax(this.root);
+    }
+
+    private int getMax(BinaryTreeNode node) {
+        if (node != null) {
+            int left = getMax(node.getLeft());
+            int right = getMax(node.getRight());
+            return Math.max(node.getValue(), Math.max(left, right));
+        }
+        return Integer.MIN_VALUE;
+    }
+
+    public int getMin() {
+        return getMin(this.root);
+    }
+
+    private int getMin(BinaryTreeNode node) {
+        if (node != null) {
+            int left = getMin(node.getLeft());
+            int right = getMin(node.getRight());
+            return Math.min(node.getValue(), Math.min(left, right));
+        }
+        return Integer.MAX_VALUE;
+    }
 }

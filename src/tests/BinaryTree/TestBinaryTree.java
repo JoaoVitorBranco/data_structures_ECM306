@@ -135,5 +135,19 @@ public class TestBinaryTree {
         assert !tree.contains(6);
     }
 
+    @Test
+    @DisplayName("Teste - Maior valor da árvore")
+    void getMax() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
+        assertEquals(5, tree.getMax());
+    }
+
+    @Test
+    @DisplayName("Teste - Menor valor da árvore")
+    void getMin() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
+        assertEquals(1, tree.getMin());
+    }
+
 
 }
