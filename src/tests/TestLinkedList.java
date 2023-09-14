@@ -1,18 +1,14 @@
 package tests;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import org.junit.Test;
 
 import main.LinkedList.LinkedList;
 
 public class TestLinkedList{
-    @Test
-    public void testNotUnit(){
+    public static void main(String[] args) {
         // Criando a lista ligada
         System.out.println("====== Teste - Criação da Lista Ligada ======");
         String n1 = "Joao";
