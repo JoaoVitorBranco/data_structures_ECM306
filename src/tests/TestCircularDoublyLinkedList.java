@@ -1,7 +1,11 @@
 package tests;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import org.junit.Test;
 
 import main.CircularDoublyLinkedList.CircularDoublyLinkedList;
 
@@ -142,4 +146,33 @@ public class TestCircularDoublyLinkedList {
 
     }
 
+    @Test
+    public void testPopFirst(){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(1); 
+        list.add(2); 
+        list.add(3); 
+        list.add(4); 
+        
+        CircularDoublyLinkedList<Integer> cdlk = new CircularDoublyLinkedList<Integer>(list);
+
+        int v1 = cdlk.popFirst();
+        assertEquals(cdlk.getSize(), 3);
+        assertEquals(v1, 1);
+    }
+
+    @Test
+    public void testPopLast(){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(1); 
+        list.add(2); 
+        list.add(3); 
+        list.add(4); 
+        
+        CircularDoublyLinkedList<Integer> cdlk = new CircularDoublyLinkedList<Integer>(list);
+
+        int v1 = cdlk.popLast();
+        assertEquals(cdlk.getSize(), 3);
+        assertEquals(v1, 4);
+    }
 }

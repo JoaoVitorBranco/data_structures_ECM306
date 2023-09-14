@@ -153,5 +153,12 @@ public class CircularDoublyLinkedList<T> {
         System.out.println(this.ward.getPrevious().getValue());
     }
 
+    public T popFirst(){
+        return this.pop(0);
+    }
+
+    public T popLast(){
+        return this.pop(this.size - 1);
+    }
 }
 
