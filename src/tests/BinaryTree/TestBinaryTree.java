@@ -149,5 +149,18 @@ public class TestBinaryTree {
         assertEquals(1, tree.getMin());
     }
 
+    @Test
+    @DisplayName("Teste - Média aritmética dos valores da árvore")
+    void getAverage() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
+        assertEquals(3.0, tree.getAverage());
+    }
+
+    @Test
+    @DisplayName("Teste - Soma dos valores da árvore")
+    void getSum() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
+        assertEquals(15, tree.getSum());
+    }
 
 }

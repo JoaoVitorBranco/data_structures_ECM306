@@ -116,7 +116,7 @@ public class BinaryTree {
         return contains(this.root, value);
     }
 
-    private boolean contains(BinaryTreeNode node, int value) {
+    public boolean contains(BinaryTreeNode node, int value) {
         if (node != null) {
             if (node.getValue() == value) {
                 return true;
@@ -130,7 +130,7 @@ public class BinaryTree {
         return getMax(this.root);
     }
 
-    private int getMax(BinaryTreeNode node) {
+    public int getMax(BinaryTreeNode node) {
         if (node != null) {
             int left = getMax(node.getLeft());
             int right = getMax(node.getRight());
@@ -143,12 +143,35 @@ public class BinaryTree {
         return getMin(this.root);
     }
 
-    private int getMin(BinaryTreeNode node) {
+    public int getMin(BinaryTreeNode node) {
         if (node != null) {
             int left = getMin(node.getLeft());
             int right = getMin(node.getRight());
             return Math.min(node.getValue(), Math.min(left, right));
         }
         return Integer.MAX_VALUE;
+    }
+
+    public double getAverage() {
+        return getAverage(this.root);
+    }
+
+    public double getAverage(BinaryTreeNode node) {
+        int left = getSum(node.getLeft());
+        int right = getSum(node.getRight());
+        return (double) (node.getValue() + left + right) / this.size;
+    }
+
+    public int getSum() {
+        return getSum(this.root);
+    }
+
+    public int getSum(BinaryTreeNode node) {
+        if (node != null) {
+            int left = getSum(node.getLeft());
+            int right = getSum(node.getRight());
+            return node.getValue() + left + right;
+        }
+        return 0;
     }
 }
