@@ -31,6 +31,14 @@ public class TestBinaryTree {
         BinaryTree tree = new BinaryTree(new BinaryTreeNode(1));
         assert tree.getSize() == 1;
         assert tree.getRoot().getValue() == 1;
+
+        tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3)));
+        assert tree.getSize() == 3;
+        assert tree.getRoot().getValue() == 1;
+
+        tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
+        assert tree.getSize() == 5;
+        assert tree.getRoot().getValue() == 1;
     }
 
     @Test
@@ -94,5 +102,38 @@ public class TestBinaryTree {
         assert "3 2 4 1 5 ".equals(tree.inOrder());
         assert "3 2 4 ".equals(tree.inOrder(tree.getRoot().getLeft()));
     }
+
+    @Test
+    @DisplayName("Teste - Verifica se a árvore é cheia")
+    void isFull() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
+        assert !tree.isFull();
+
+        tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5, new BinaryTreeNode(6), new BinaryTreeNode(7))));
+        assert tree.isFull();
+    }
+
+    @Test
+    @DisplayName("Teste - Verificar a altura da árvore")
+    void getHeight() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
+        assert tree.getHeight() == 2;
+
+        tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5, new BinaryTreeNode(6), new BinaryTreeNode(7))));
+        assert tree.getHeight() == 2;
+    }
+
+    @Test
+    @DisplayName("Teste - Verificar se K está na árvore")
+    void contains() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
+        assert tree.contains(1);
+        assert tree.contains(2);
+        assert tree.contains(3);
+        assert tree.contains(4);
+        assert tree.contains(5);
+        assert !tree.contains(6);
+    }
+
 
 }

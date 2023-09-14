@@ -16,12 +16,12 @@ public class BinaryTree {
 
     public BinaryTree(BinaryTreeNode root) {
         this.root = root;
-        this.size = 1;
+        setSizeBasedInNode(this.root);
     }
 
     public BinaryTree(int value, BinaryTreeNode left, BinaryTreeNode right) {
         this.root = new BinaryTreeNode(value, left, right);
-        this.size = 1;
+        setSizeBasedInNode(this.root);
     }
 
     public BinaryTreeNode getRoot() {
@@ -95,5 +95,34 @@ public class BinaryTree {
         return inOrder(this.root);
     }
 
+    public int getHeight(BinaryTreeNode node) {
+        if (node != null) {
+            int left = getHeight(node.getLeft());
+            int right = getHeight(node.getRight());
+            return Math.max(left, right) + 1;
+        }
+        return -1;
+    }
 
+    public int getHeight(){
+        return getHeight(this.root);
+    }
+
+    public boolean isFull() {
+        return this.size == Math.pow(2, getHeight() + 1) - 1;
+    }
+
+    public boolean contains(int value) {
+        return contains(this.root, value);
+    }
+
+    private boolean contains(BinaryTreeNode node, int value) {
+        if (node != null) {
+            if (node.getValue() == value) {
+                return true;
+            }
+            return contains(node.getLeft(), value) || contains(node.getRight(), value);
+        }
+        return false;
+    }
 }
