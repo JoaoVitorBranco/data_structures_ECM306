@@ -65,24 +65,35 @@ public class BinaryTree {
         return posOrder(this.root);
     }
 
-//    public String preOrder(BinaryTreeNode node) {
-//        if (node != null) {
-//            System.out.println(node.getValue());
-//            preOrder(node.getLeft());
-//            preOrder(node.getRight());
-//        }
-//    }
-//
-//    public String inOrder(BinaryTreeNode node) {
-//        Strfi
-//        if (node != null) {
-//            inOrder(node.getLeft());
-//            System.out.println(node.getValue());
-//            inOrder(node.getRight());
-//        }
-//    }
+    public String preOrder(BinaryTreeNode node) {
+        String left = "";
+        String right = "";
+        if (node != null) {
+            left = preOrder(node.getLeft());
+            right = preOrder(node.getRight());
+            return node.getValue() + " " + left + right;
+        }
+        return "";
+    }
 
+    public String preOrder(){
+        return preOrder(this.root);
+    }
 
+    public String inOrder(BinaryTreeNode node) {
+        String left = "";
+        String right = "";
+        if (node != null) {
+            left = inOrder(node.getLeft());
+            right = inOrder(node.getRight());
+            return left + node.getValue() + " " + right;
+        }
+        return "";
+    }
+
+    public String inOrder(){
+        return inOrder(this.root);
+    }
 
 
 }

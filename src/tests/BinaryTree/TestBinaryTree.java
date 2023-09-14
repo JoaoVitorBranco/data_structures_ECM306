@@ -73,10 +73,26 @@ public class TestBinaryTree {
     void posOrder() {
         BinaryTree tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
 
-        assertEquals("3 4 2 5 1 ", tree.posOrder());
-        assertEquals("3 4 2 5 1 ", tree.getRoot().getLeft());
+        assert "3 4 2 5 1 ".equals(tree.posOrder());
+        assert "3 4 2 ".equals(tree.posOrder(tree.getRoot().getLeft()));
+    }
 
+    @Test
+    @DisplayName("Teste - Algortimo de PreOrder")
+    void preOrder() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
 
+        assert "1 2 3 4 5 ".equals(tree.preOrder());
+        assert "2 3 4 ".equals(tree.preOrder(tree.getRoot().getLeft()));
+    }
+
+    @Test
+    @DisplayName("Teste - Algortimo de InOrder")
+    void inOrder() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
+
+        assert "3 2 4 1 5 ".equals(tree.inOrder());
+        assert "3 2 4 ".equals(tree.inOrder(tree.getRoot().getLeft()));
     }
 
 }
