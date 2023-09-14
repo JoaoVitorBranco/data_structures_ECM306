@@ -134,19 +134,4 @@ public class TestBinaryTreeNode {
         node.setRight(null);
         assert node.toString().equals("1");
     }
-
-
-    @Test
-    @DisplayName("Teste - Get Value")
-    void setRoot() {
-    }
-
-    @Test
-    @DisplayName("Teste - Get Left")
-    void isEmpty() {
-    }
-
-    @Test
-    void posOrder() {
-    }
 }
