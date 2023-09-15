@@ -163,4 +163,30 @@ public class TestBinaryTree {
         assertEquals(15, tree.getSum());
     }
 
+    @Test
+    @DisplayName("Teste - Quantidade de nós folha")
+    void getLeafCount() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1));
+        assertEquals(1, tree.getLeafCount());
+
+        tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3)));
+        assertEquals(2, tree.getLeafCount());
+
+        tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
+        assertEquals(3, tree.getLeafCount());
+    }
+
+    @Test
+    @DisplayName("Teste - Quantidade de nós internos")
+    void getInternalNodeCount() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1));
+        assertEquals(0, tree.getInternalNodeCount());
+
+        tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3)));
+        assertEquals(1, tree.getInternalNodeCount());
+
+        tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2, new BinaryTreeNode(3), new BinaryTreeNode(4)), new BinaryTreeNode(5)));
+        assertEquals(2, tree.getInternalNodeCount());
+    }
+
 }

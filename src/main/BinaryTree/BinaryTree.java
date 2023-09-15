@@ -174,4 +174,33 @@ public class BinaryTree {
         }
         return 0;
     }
+
+    public int getLeafCount() {
+        return getLeafCount(this.root);
+    }
+
+    public int getLeafCount(BinaryTreeNode node) {
+        if (node != null) {
+            if (node.getLeft() == null && node.getRight() == null) {
+                return 1;
+            }
+            int left = getLeafCount(node.getLeft());
+            int right = getLeafCount(node.getRight());
+            return left + right;
+        }
+        return 0;
+    }
+
+    public int getInternalNodeCount() {
+        return getInternalNodeCount(this.root);
+    }
+
+    public int getInternalNodeCount(BinaryTreeNode node) {
+        if (node != null) {
+            if (node.getLeft() != null || node.getRight() != null) {
+                return 1 + getInternalNodeCount(node.getLeft()) + getInternalNodeCount(node.getRight());
+            }
+        }
+        return 0;
+    }
 }
