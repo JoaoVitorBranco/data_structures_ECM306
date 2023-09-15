@@ -175,4 +175,36 @@ public class TestCircularDoublyLinkedList {
         assertEquals(cdlk.getSize(), 3);
         assertEquals(v1, 4);
     }
+
+    @Test
+    public void testInsertFirst(){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(1); 
+        list.add(2); 
+        list.add(3); 
+        list.add(4); 
+        
+        CircularDoublyLinkedList<Integer> cdlk = new CircularDoublyLinkedList<Integer>(list);
+
+        cdlk.insertFirst(0);
+        assertEquals(cdlk.getSize(), 5);
+        int v1 = cdlk.get(0);
+        assertEquals(v1, 0);
+    }
+
+    @Test
+    public void testInsertLast(){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(1); 
+        list.add(2); 
+        list.add(3); 
+        list.add(4); 
+        
+        CircularDoublyLinkedList<Integer> cdlk = new CircularDoublyLinkedList<Integer>(list);
+
+        cdlk.insertLast(0);
+        assertEquals(cdlk.getSize(), 5);
+        int v1 = cdlk.get(cdlk.getSize() - 1);
+        assertEquals(v1, 0);
+    }
 }

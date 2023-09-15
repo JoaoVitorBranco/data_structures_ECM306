@@ -160,5 +160,13 @@ public class CircularDoublyLinkedList<T> {
     public T popLast(){
         return this.pop(this.size - 1);
     }
+
+    public void insertFirst(T value){
+        this.insert(0, value);
+    }
+
+    public void insertLast(T value){
+        this.insert(this.size, value);
+    }
 }
 
