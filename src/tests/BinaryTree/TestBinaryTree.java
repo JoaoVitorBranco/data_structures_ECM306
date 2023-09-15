@@ -189,4 +189,14 @@ public class TestBinaryTree {
         assertEquals(2, tree.getInternalNodeCount());
     }
 
+    @Test
+    @DisplayName("Teste - Quantidade de nulos")
+    void getNullNodeCount() {
+        BinaryTree tree = new BinaryTree(new BinaryTreeNode(1));
+        assertEquals(2, tree.getNullNodeCount());
+
+        tree = new BinaryTree(new BinaryTreeNode(1, new BinaryTreeNode(2), new BinaryTreeNode(3)));
+        assertEquals(4, tree.getNullNodeCount());
+    }
+
 }

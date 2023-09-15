@@ -203,4 +203,21 @@ public class BinaryTree {
         }
         return 0;
     }
+
+    public int getNullNodeCount() {
+        return getNullNodeCount(this.root);
+    }
+
+    public int getNullNodeCount(BinaryTreeNode node) {
+        if (node != null) {
+            if (node.getLeft() == null && node.getRight() == null) {
+                return 2;
+            } else if (node.getLeft() == null || node.getRight() == null) {
+                return 1;
+            }
+            return getNullNodeCount(node.getLeft()) + getNullNodeCount(node.getRight());
+        }
+        return 0;
+    }
+
 }
