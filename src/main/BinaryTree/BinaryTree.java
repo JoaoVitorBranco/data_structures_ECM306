@@ -220,4 +220,56 @@ public class BinaryTree {
         return 0;
     }
 
+    public void insertBiggerInRight(BinaryTreeNode node, int value) {
+        // insertBiggerInRight bigger in right and smaller in left
+        if (node != null) {
+            if (node.getValue() < value) {
+                if (node.getRight() == null) {
+                    node.setRight(new BinaryTreeNode(value));
+                    this.size++;
+                } else {
+                    insertBiggerInRight(node.getRight(), value);
+                }
+            } else {
+                if (node.getLeft() == null) {
+                    node.setLeft(new BinaryTreeNode(value));
+                    this.size++;
+                } else {
+                    insertBiggerInRight(node.getLeft(), value);
+                }
+            }
+        }
+
+    }
+
+    public void insertBiggerInRight(int value) {
+     insertBiggerInRight(this.root, value);
+    }
+
+    public void insertSmallerInRight(BinaryTreeNode node, int value) {
+        // insert bigger on the left and smaller on the right
+        if (node != null) {
+            if (node.getValue() < value) {
+                if (node.getLeft() == null) {
+                    node.setLeft(new BinaryTreeNode(value));
+                    this.size++;
+                } else {
+                    insertSmallerInRight(node.getLeft(), value);
+                }
+            } else {
+                if (node.getRight() == null) {
+                    node.setRight(new BinaryTreeNode(value));
+                    this.size++;
+                } else {
+                    insertBiggerInRight(node.getRight(), value);
+                }
+            }
+        }
+    }
+
+    public void insertSmallerInRight(int value) {
+       insertSmallerInRight(this.root, value);
+    }
+
+
 }

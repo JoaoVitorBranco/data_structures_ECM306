@@ -199,4 +199,50 @@ public class TestBinaryTree {
         assertEquals(4, tree.getNullNodeCount());
     }
 
+
+    @Test
+    @DisplayName("Teste - Cria uma árvore binária a partir de uma string")
+    void ex1(){
+        BinaryTree tree = new BinaryTree(0, new BinaryTreeNode(1), new BinaryTreeNode(2, new BinaryTreeNode(3, new BinaryTreeNode(5), new BinaryTreeNode(6)), new BinaryTreeNode(4)));
+
+        String preOrder = tree.preOrder();
+        assert preOrder.equals("0 1 2 3 5 6 4 ");
+
+        String posOrder = tree.posOrder();
+        assert posOrder.equals("1 5 6 3 4 2 0 ");
+
+        String inOrder = tree.inOrder();
+        assert inOrder.equals("1 0 5 3 6 2 4 ");
+    }
+
+    @Test
+    @DisplayName("Teste - Insere maior depois")
+    void insertBiggerInRight(){
+        BinaryTree tree = new BinaryTree(2);
+        tree.insertBiggerInRight(5);
+        tree.insertBiggerInRight(3);
+        tree.insertBiggerInRight(1);
+        tree.insertBiggerInRight(4);
+        tree.insertBiggerInRight(6);
+
+        String preOrder = tree.preOrder();
+        assert preOrder.equals("2 1 5 3 4 6 ");
+
+    }
+
+    @Test
+    @DisplayName("Teste - Insere menor depois")
+    void insertSmallerInLeft(){
+        BinaryTree tree = new BinaryTree(2);
+        tree.insertSmallerInRight(5);
+        tree.insertSmallerInRight(3);
+        tree.insertSmallerInRight(1);
+        tree.insertSmallerInRight(4);
+        tree.insertSmallerInRight(6);
+
+        String preOrder = tree.preOrder();
+        assert preOrder.equals("2 5 6 3 4 1 ");
+
+    }
+
 }
