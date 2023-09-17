@@ -259,6 +259,12 @@ public class BinaryTree<T> {
         return true;
     }
 
+    public int minNodeCount(){
+        return getHeight(this.root) + 1;
+    }
 
+    public int maxNodeCount(){
+        return (int) Math.pow(2, getHeight() + 1) - 1;
+    }
 
 }

@@ -200,5 +200,18 @@ public class TestBinaryTree {
         assert !tree.isImproper();
     }
 
+    @Test
+    @DisplayName("Teste -Min and max node")
+    void minAndMaxNode(){
+        BinaryTreeNode<Integer> node = new BinaryTreeNode<Integer>(0);
+        node.setLeft(new BinaryTreeNode<Integer>(1));
+        node.getLeft().setRight(new BinaryTreeNode<Integer>(2));
+
+        BinaryTree<Integer> tree = new BinaryTree<Integer>(node);
+
+        assertEquals(3, tree.minNodeCount());
+        assertEquals(7, tree.maxNodeCount());
+    }
+
 
 }
