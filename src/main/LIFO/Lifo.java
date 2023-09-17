@@ -36,7 +36,7 @@ public class Lifo<T> {
             default:
                 System.out.println("Invalid config. Default config will be selected: LinkedList");
                 this.linkedStack = new LinkedList<T>();
-                this.config = 0;
+                this.config = 2;
                 break;
         }
     }
