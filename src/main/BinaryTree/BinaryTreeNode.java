@@ -1,50 +1,50 @@
 package main.BinaryTree;
 
-public class BinaryTreeNode {
-    private int value;
-    private BinaryTreeNode left;
-    private BinaryTreeNode right;
+public class BinaryTreeNode<T> {
+    private T value;
+    private BinaryTreeNode<T> left;
+    private BinaryTreeNode<T> right;
 
-    public BinaryTreeNode(int value) {
+    public BinaryTreeNode(T value) {
         this.value = value;
         this.left = null;
         this.right = null;
     }
 
     public BinaryTreeNode() {
-        this.value = 0;
+        this.value = null;
         this.left = null;
         this.right = null;
     }
 
-    public BinaryTreeNode(int value, BinaryTreeNode left, BinaryTreeNode right) {
+    public BinaryTreeNode(T value, BinaryTreeNode<T> left, BinaryTreeNode<T> right) {
         this.value = value;
         this.left = left;
         this.right = right;
     }
 
 
-    public int getValue() {
+    public T getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(T value) {
         this.value = value;
     }
 
-    public BinaryTreeNode getLeft() {
+    public BinaryTreeNode<T> getLeft() {
         return left;
     }
 
-    public void setLeft(BinaryTreeNode left) {
+    public void setLeft(BinaryTreeNode<T> left) {
         this.left = left;
     }
 
-    public BinaryTreeNode getRight() {
+    public BinaryTreeNode<T> getRight() {
         return right;
     }
 
-    public void setRight(BinaryTreeNode right) {
+    public void setRight(BinaryTreeNode<T> right) {
         this.right = right;
     }
 

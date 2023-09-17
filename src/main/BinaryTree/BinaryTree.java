@@ -1,7 +1,7 @@
 package main.BinaryTree;
 
-public class BinaryTree {
-    private BinaryTreeNode root;
+public class BinaryTree<T> {
+    private BinaryTreeNode<T> root;
     private int size;
 
     public BinaryTree() {
@@ -9,32 +9,32 @@ public class BinaryTree {
         this.size = 0;
     }
 
-    public BinaryTree(int value) {
-        this.root = new BinaryTreeNode(value);
+    public BinaryTree(T value) {
+        this.root = new BinaryTreeNode<T>(value);
         this.size = 1;
     }
 
-    public BinaryTree(BinaryTreeNode root) {
+    public BinaryTree(BinaryTreeNode<T> root) {
         this.root = root;
         setSizeBasedInNode(this.root);
     }
 
-    public BinaryTree(int value, BinaryTreeNode left, BinaryTreeNode right) {
-        this.root = new BinaryTreeNode(value, left, right);
+    public BinaryTree(T value, BinaryTreeNode<T> left, BinaryTreeNode<T> right) {
+        this.root = new BinaryTreeNode<T>(value, left, right);
         setSizeBasedInNode(this.root);
     }
 
-    public BinaryTreeNode getRoot() {
+    public BinaryTreeNode<T> getRoot() {
         return root;
     }
 
-    public void setRoot(BinaryTreeNode root) {
+    public void setRoot(BinaryTreeNode<T> root) {
         this.size = 0;
         setSizeBasedInNode(root);
         this.root = root;
     }
 
-    private void setSizeBasedInNode(BinaryTreeNode node) {
+    private void setSizeBasedInNode(BinaryTreeNode<T> node) {
         if (node != null) {
             this.size++;
             setSizeBasedInNode(node.getLeft());
@@ -50,7 +50,7 @@ public class BinaryTree {
         return this.size == 0;
     }
 
-    public String posOrder(BinaryTreeNode node) {
+    public String posOrder(BinaryTreeNode<T> node) {
         String left = "";
         String right = "";
         if (node != null) {
@@ -65,7 +65,7 @@ public class BinaryTree {
         return posOrder(this.root);
     }
 
-    public String preOrder(BinaryTreeNode node) {
+    public String preOrder(BinaryTreeNode<T> node) {
         String left = "";
         String right = "";
         if (node != null) {
@@ -80,7 +80,7 @@ public class BinaryTree {
         return preOrder(this.root);
     }
 
-    public String inOrder(BinaryTreeNode node) {
+    public String inOrder(BinaryTreeNode<T> node) {
         String left = "";
         String right = "";
         if (node != null) {
@@ -95,7 +95,7 @@ public class BinaryTree {
         return inOrder(this.root);
     }
 
-    public int getHeight(BinaryTreeNode node) {
+    public int getHeight(BinaryTreeNode<T> node) {
         if (node != null) {
             int left = getHeight(node.getLeft());
             int right = getHeight(node.getRight());
@@ -112,11 +112,11 @@ public class BinaryTree {
         return this.size == Math.pow(2, getHeight() + 1) - 1;
     }
 
-    public boolean contains(int value) {
+    public boolean contains(T value) {
         return contains(this.root, value);
     }
 
-    public boolean contains(BinaryTreeNode node, int value) {
+    public boolean contains(BinaryTreeNode<T> node, T value) {
         if (node != null) {
             if (node.getValue() == value) {
                 return true;
@@ -126,60 +126,60 @@ public class BinaryTree {
         return false;
     }
 
-    public int getMax() {
-        return getMax(this.root);
-    }
+    // public int getMax() {
+    //     return getMax(this.root);
+    // }
 
-    public int getMax(BinaryTreeNode node) {
-        if (node != null) {
-            int left = getMax(node.getLeft());
-            int right = getMax(node.getRight());
-            return Math.max(node.getValue(), Math.max(left, right));
-        }
-        return Integer.MIN_VALUE;
-    }
+    // public int getMax(BinaryTreeNode<T> node) {
+    //     if (node != null) {
+    //         int left = getMax(node.getLeft());
+    //         int right = getMax(node.getRight());
+    //         return Math.max(node.getValue(), Math.max(left, right));
+    //     }
+    //     return Integer.MIN_VALUE;
+    // }
 
-    public int getMin() {
-        return getMin(this.root);
-    }
+    // public int getMin() {
+    //     return getMin(this.root);
+    // }
 
-    public int getMin(BinaryTreeNode node) {
-        if (node != null) {
-            int left = getMin(node.getLeft());
-            int right = getMin(node.getRight());
-            return Math.min(node.getValue(), Math.min(left, right));
-        }
-        return Integer.MAX_VALUE;
-    }
+    // public int getMin(BinaryTreeNode<T> node) {
+    //     if (node != null) {
+    //         int left = getMin(node.getLeft());
+    //         int right = getMin(node.getRight());
+    //         return Math.min(node.getValue(), Math.min(left, right));
+    //     }
+    //     return Integer.MAX_VALUE;
+    // }
 
-    public double getAverage() {
-        return getAverage(this.root);
-    }
+    // public double getAverage() {
+    //     return getAverage(this.root);
+    // }
 
-    public double getAverage(BinaryTreeNode node) {
-        int left = getSum(node.getLeft());
-        int right = getSum(node.getRight());
-        return (double) (node.getValue() + left + right) / this.size;
-    }
+    // public double getAverage(BinaryTreeNode<T> node) {
+    //     int left = getSum(node.getLeft());
+    //     int right = getSum(node.getRight());
+    //     return (double) (node.getValue() + left + right) / this.size;
+    // }
 
-    public int getSum() {
-        return getSum(this.root);
-    }
+    // public int getSum() {
+    //     return getSum(this.root);
+    // }
 
-    public int getSum(BinaryTreeNode node) {
-        if (node != null) {
-            int left = getSum(node.getLeft());
-            int right = getSum(node.getRight());
-            return node.getValue() + left + right;
-        }
-        return 0;
-    }
+    // public int getSum(BinaryTreeNode node) {
+    //     if (node != null) {
+    //         int left = getSum(node.getLeft());
+    //         int right = getSum(node.getRight());
+    //         return node.getValue() + left + right;
+    //     }
+    //     return 0;
+    // }
 
     public int getLeafCount() {
         return getLeafCount(this.root);
     }
 
-    public int getLeafCount(BinaryTreeNode node) {
+    public int getLeafCount(BinaryTreeNode<T> node) {
         if (node != null) {
             if (node.getLeft() == null && node.getRight() == null) {
                 return 1;
@@ -195,7 +195,7 @@ public class BinaryTree {
         return getInternalNodeCount(this.root);
     }
 
-    public int getInternalNodeCount(BinaryTreeNode node) {
+    public int getInternalNodeCount(BinaryTreeNode<T> node) {
         if (node != null) {
             if (node.getLeft() != null || node.getRight() != null) {
                 return 1 + getInternalNodeCount(node.getLeft()) + getInternalNodeCount(node.getRight());
@@ -208,7 +208,7 @@ public class BinaryTree {
         return getNullNodeCount(this.root);
     }
 
-    public int getNullNodeCount(BinaryTreeNode node) {
+    public int getNullNodeCount(BinaryTreeNode<T> node) {
         if (node != null) {
             if (node.getLeft() == null && node.getRight() == null) {
                 return 2;
@@ -220,56 +220,6 @@ public class BinaryTree {
         return 0;
     }
 
-    public void insertBiggerInRight(BinaryTreeNode node, int value) {
-        // insertBiggerInRight bigger in right and smaller in left
-        if (node != null) {
-            if (node.getValue() < value) {
-                if (node.getRight() == null) {
-                    node.setRight(new BinaryTreeNode(value));
-                    this.size++;
-                } else {
-                    insertBiggerInRight(node.getRight(), value);
-                }
-            } else {
-                if (node.getLeft() == null) {
-                    node.setLeft(new BinaryTreeNode(value));
-                    this.size++;
-                } else {
-                    insertBiggerInRight(node.getLeft(), value);
-                }
-            }
-        }
-
-    }
-
-    public void insertBiggerInRight(int value) {
-     insertBiggerInRight(this.root, value);
-    }
-
-    public void insertSmallerInRight(BinaryTreeNode node, int value) {
-        // insert bigger on the left and smaller on the right
-        if (node != null) {
-            if (node.getValue() < value) {
-                if (node.getLeft() == null) {
-                    node.setLeft(new BinaryTreeNode(value));
-                    this.size++;
-                } else {
-                    insertSmallerInRight(node.getLeft(), value);
-                }
-            } else {
-                if (node.getRight() == null) {
-                    node.setRight(new BinaryTreeNode(value));
-                    this.size++;
-                } else {
-                    insertBiggerInRight(node.getRight(), value);
-                }
-            }
-        }
-    }
-
-    public void insertSmallerInRight(int value) {
-       insertSmallerInRight(this.root, value);
-    }
 
 
 }
