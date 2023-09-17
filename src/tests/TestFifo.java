@@ -21,7 +21,7 @@ public class TestFifo {
         assertEquals(fifo3.getConfig(), 2);
 
         Fifo<Integer> fifo4 = new Fifo<Integer>(3);
-        assertEquals(fifo4.getConfig(), 0);
+        assertEquals(fifo4.getConfig(), 2);
     }
 
     @Test

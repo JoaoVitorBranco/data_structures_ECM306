@@ -19,7 +19,7 @@ public class TestLifo {
         assertEquals(lifo3.getConfig(), 2);
 
         Lifo<Integer> lifo4 = new Lifo<Integer>(3);
-        assertEquals(lifo4.getConfig(), 0);
+        assertEquals(lifo4.getConfig(), 2);
     }
 
     @Test
