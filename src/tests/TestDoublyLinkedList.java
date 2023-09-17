@@ -183,4 +183,37 @@ public class TestDoublyLinkedList {
         assertEquals(v1, 0);
         dlk1.printFirst();
     }
+    
+    @Test
+    public void testGetAllElementsInverted(){
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(1); 
+        list.add(2); 
+        list.add(3); 
+        list.add(4); 
+        DoublyLinkedList<Integer> dlk1 = new DoublyLinkedList<Integer>(list);
+        ArrayList<Integer> inverted = dlk1.getAllElementsInverted();
+        assertEquals(inverted.size(), dlk1.getSize());
+        for (int i = 0; i < inverted.size(); i++) {
+            assertEquals(inverted.get(i), dlk1.get(dlk1.getSize() - 1 - i));
+        }
+
+        dlk1.pop(0);
+        dlk1.pop(0);
+
+        ArrayList<Integer> inverted2 = dlk1.getAllElementsInverted();
+        assertEquals(inverted2.size(), dlk1.getSize());
+        for (int i = 0; i < inverted2.size(); i++) {
+            assertEquals(inverted2.get(i), dlk1.get(dlk1.getSize() - 1 - i));
+        }
+
+        dlk1.pop(0);
+
+        ArrayList<Integer> inverted3 = dlk1.getAllElementsInverted();
+        assertEquals(inverted3.size(), dlk1.getSize());
+        for (int i = 0; i < inverted3.size(); i++) {
+            assertEquals(inverted3.get(i), dlk1.get(dlk1.getSize() - 1 - i));
+        }
+        
+    }
 }

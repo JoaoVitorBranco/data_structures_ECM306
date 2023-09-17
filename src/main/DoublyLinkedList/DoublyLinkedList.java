@@ -18,6 +18,7 @@ public class DoublyLinkedList<T>{
      * void printLast()
      * void insertLast(T new_node_val)
      * void insertFirst(T new_node_val)
+     * ArrayList<T> getAllElementsInverted()
      */
 
     public DoublyLinkedList(){
@@ -212,6 +213,16 @@ public class DoublyLinkedList<T>{
 
     public void insertFirst(T new_node_val){
         this.insert(0, new_node_val);
+    }
+
+    public ArrayList<T> getAllElementsInverted(){
+        ArrayList<T> list = new ArrayList<T>();
+        Node<T> aux = this.tail;
+        for (int i = 0; i < this.getSize(); i++) {
+            list.add(aux.getValue());
+            aux = aux.getPrevious();
+        }
+        return list;
     }
 
     
