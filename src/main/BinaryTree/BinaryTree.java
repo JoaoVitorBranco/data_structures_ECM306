@@ -1,6 +1,35 @@
 package main.BinaryTree;
 
 public class BinaryTree<T> {
+    /*
+     * Depth -> Profundidade
+     *      - tamanho da raiz até o nó
+     *
+     * Height -> Altura
+     *      - tamanho do nó até o nó de nível mais baixo
+     *
+     * TreeHeight -> Altura da árvore
+     *      - altura da raiz
+     *
+     * Empty -> Vazia
+     *      - árvore vazia
+     *
+     * Propper -> Própria
+     *     - SEMPRE tem 0 ou 2 filhos
+     *
+     * Impropper -> Imprópria
+     *      - Pelo menos um nó tem APENAS 1 filho
+     *
+     * minNodeCount -> Número mínimo de nós
+     *      - Menor quantidade de nós que uma árvore pode ter
+     *      - n = h + 1
+     *
+     * maxNodeCount -> Número máximo de nós
+     *     - Maior quantidade de nós que uma árvore pode ter
+     *    - n = 2^(h+1) - 1
+     *
+     */
+
     private BinaryTreeNode<T> root;
     private int size;
 
