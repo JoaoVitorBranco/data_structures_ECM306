@@ -220,6 +220,45 @@ public class BinaryTree<T> {
         return 0;
     }
 
+    public Boolean isProper() {
+        return isProper(this.root);
+    }
+
+//    **Própria**
+//
+//- tem 0 ou 2 filhos.
+//- nó interno tem 2 filhos
+//
+//Imprópria
+//
+//- Pelo menos um nó cm apenas um filho
+
+    public Boolean isProper(BinaryTreeNode<T> node) {
+        if (node != null) {
+            if (node.getLeft() != null && node.getRight() != null) {
+                return isProper(node.getLeft()) && isProper(node.getRight());
+            } else if (node.getLeft() == null && node.getRight() == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Boolean isImproper() {
+        return isImproper(this.root);
+    }
+
+    public Boolean isImproper(BinaryTreeNode<T> node) {
+        if (node != null) {
+            if (node.getLeft() != null && node.getRight() != null) {
+                return isImproper(node.getLeft()) || isImproper(node.getRight());
+            } else if (node.getLeft() == null && node.getRight() == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
 }
