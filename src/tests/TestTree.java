@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import main.tree.Node;
-import main.tree.Tree;
+import main.Tree.Node;
+import main.Tree.Tree;
 
 public class TestTree{
     public static void main(String[] args) {

@@ -11,6 +11,16 @@ public class Lifo<T> {
     private LinkedList<T> linkedStack;
     private int config;
 
+    /*
+     * void push(T value)
+     * T pop()
+     * void print()
+     * int getConfig()
+     * int getSize()
+     * T getHead()
+     * T getTail()
+     */
+
     public Lifo(int config){
         this.config = config;
         switch (config) {

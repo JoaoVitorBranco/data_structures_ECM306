@@ -1,4 +1,4 @@
-package main.tree;
+package main.Tree;
 
 import java.util.ArrayList;
 
@@ -18,6 +18,35 @@ public class Tree<T> {
      *      - árvore vazia
      * 
      */
+
+    /*
+     * void addChild(Node<T> father, T value)
+     * void addChild(T value)
+     * void printChildren(Node<T> node)
+     * Node<T> getFather(Node<T> node)
+     * void printFather(Node<T> node)
+     * boolean nodeIsIntern(Node<T> node)
+     * void printLeafChildren(Node<T> node)
+     * void printPreorder(Node<T> startNode)
+     * void printPosorder(Node<T> startNode)
+     * void doubleChildren(Node<Integer> node)
+     * void doubleFather(Node<Integer> node)
+     * ArrayList<T> getAllSiblings(Node<T> node)
+     * ArrayList<T> getAllInternals(Node<T> node)
+     * ArrayList<T> getAllAncestors(Node<T> node)
+     * ArrayList<T> getAllDownwards(Node<T> node)
+     * int getDepth(Node<T> node)
+     * int getHeight(Node<T> node)
+     * int getTreeHeight()
+     * int getSize()
+     * T getRoot()
+     * ArrayList<T> getAllChildren(Node<T> node)
+     * boolean isEmpty()
+     * ArrayList<T> getAllNodes()
+     * void replace(Node<T> node, T val)
+     * 
+     */
+
     private Node<T> root;
     private int size;
 

@@ -1,4 +1,4 @@
-package main.tree;
+package main.Tree;
 
 import java.util.ArrayList;
 
@@ -21,6 +21,29 @@ public class Node<T>{
      * Downward -> Descendente
      *      -  filho, neto, bisneto, ...
      */
+
+    /*
+    * Node<T> getFather()
+    * void setFather(Node<T> father)
+    * T getValue()
+    * void setValue(T value)
+    * Node<T> getFirstChild()
+    * void setFirstChild(Node<T> firstChild)
+    * Node<T> getNextSibling()
+    * void setNextSibling(Node<T> nextSibling)
+    * void printChildren()
+    * boolean isIntern()
+    * boolean isLeaf()
+    * void printLeafChildren()
+    * ArrayList<T> getAllInternals()
+    * ArrayList<T> getAllSiblings()
+    * ArrayList<T> getAllAncestors()
+    * ArrayList<T> getAllDownwards()
+    * int getDepth()
+    * int getHeight()
+    * ArrayList<T> getAllChildren()
+    */
+
     private Node<T> father;
     private T value;
     private Node<T> firstChild;

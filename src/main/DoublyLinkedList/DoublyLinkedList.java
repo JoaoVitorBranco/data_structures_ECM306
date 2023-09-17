@@ -6,6 +6,20 @@ public class DoublyLinkedList<T>{
     private Node<T> tail;
     private int size;
     
+    /*
+     * int getSize()
+     * void printList()
+     * T get(int index)
+     * void insert(int index, T new_node_val)
+     * T pop(int index)
+     * T popFirst()
+     * T popLast()
+     * void printFirst()
+     * void printLast()
+     * void insertLast(T new_node_val)
+     * void insertFirst(T new_node_val)
+     */
+
     public DoublyLinkedList(){
         this.head = null;
         this.tail = null;

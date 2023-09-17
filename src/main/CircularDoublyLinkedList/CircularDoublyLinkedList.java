@@ -5,6 +5,20 @@ import java.util.ArrayList;
 public class CircularDoublyLinkedList<T> {
     private Node<T> ward;
     private int size;
+
+    /*
+     * int getSize()
+     * void printList()
+     * T get(int index)
+     * void insert(int index, T new_node_val)
+     * T pop(int index)
+     * T popFirst()
+     * T popLast()
+     * void printFirst()
+     * void printLast()
+     * void insertLast(T new_node_val)
+     * void insertFirst(T new_node_val)
+     */
     
     public CircularDoublyLinkedList(){
         this.ward = new Node<T>();

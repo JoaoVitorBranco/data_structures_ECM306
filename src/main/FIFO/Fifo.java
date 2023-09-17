@@ -10,6 +10,16 @@ public class Fifo<T> {
     private LinkedList<T> linkedStack;
     private int config;
 
+    /*
+     * void push(T value)
+     * T pop()
+     * void print()
+     * int getConfig()
+     * int getSize()
+     * T getHead()
+     * T getTail()
+     */
+
     public Fifo(int config){
         this.config = config;
         switch (config) {

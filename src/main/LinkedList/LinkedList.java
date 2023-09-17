@@ -6,6 +6,22 @@ public class LinkedList<T> {
     private Node<T> head;
     private int len;
 
+    /*
+     * void addLast(T tail_val)
+     * pop(int index)
+     * get
+     * insert
+     * getLen
+     * get(int index)
+     * insert(int index, T insertion_val)
+     * getLen()
+     * printList()
+     * update(int idx, T update_val)
+     * addFirst(T head_val)
+     * T popFirst()
+     * T popLast()
+     */
+
     public LinkedList(){
         this.head = null;
         this.len = 0;        
