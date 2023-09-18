@@ -4,7 +4,46 @@ public class BinaryTree<T> {
     /*
      * Class created by João Branco and Vitor Soller
      * Repository can be viewed at https://github.com/JoaoVitorBranco/data_structures_ECM306
-     
+     *
+     * Métodos
+     * void add(T value, BinaryTreeNode<T> node) 
+     * BinaryTreeNode<T> getRoot() 
+     * void setRoot(BinaryTreeNode<T> root) 
+     * void setSizeBasedInNode(BinaryTreeNode<T> node) 
+     * int getSize() 
+     * boolean isEmpty() 
+     * String posOrder(BinaryTreeNode<T> node) 
+     * String posOrder()
+     * String preOrder(BinaryTreeNode<T> node) 
+     * String preOrder()
+     * String inOrder(BinaryTreeNode<T> node) 
+     * String inOrder()
+     * int getHeight(BinaryTreeNode<T> node) 
+     * int getHeight()
+     * boolean isFull() 
+     * boolean contains(T value) 
+     * boolean contains(BinaryTreeNode<T> node, T value) 
+     * int getMax() 
+     * int getMax(BinaryTreeNode<T> node) 
+     * int getMin() 
+     * int getMin(BinaryTreeNode<T> node) 
+     * double getAverage() 
+     * double getAverage(BinaryTreeNode<T> node) 
+     * int getSum() 
+     * int getSum(BinaryTreeNode node) 
+     * int getLeafCount() 
+     * int getLeafCount(BinaryTreeNode<T> node) 
+     * int getInternalNodeCount() 
+     * int getInternalNodeCount(BinaryTreeNode<T> node) 
+     * int getNullNodeCount() 
+     * int getNullNodeCount(BinaryTreeNode<T> node) 
+     * Boolean isProper() 
+     * Boolean isProper(BinaryTreeNode<T> node) 
+     * Boolean isImproper() 
+     * Boolean isImproper(BinaryTreeNode<T> node) 
+     * int minNodeCount()
+     * int maxNodeCount()
+     *
      * Depth -> Profundidade
      *      - tamanho da raiz até o nó
      *
@@ -54,6 +93,11 @@ public class BinaryTree<T> {
     public BinaryTree(T value, BinaryTreeNode<T> left, BinaryTreeNode<T> right) {
         this.root = new BinaryTreeNode<T>(value, left, right);
         setSizeBasedInNode(this.root);
+    }
+
+    public void add(T value, BinaryTreeNode<T> node) {
+        node.add(value);
+        this.size++;
     }
 
     public BinaryTreeNode<T> getRoot() {

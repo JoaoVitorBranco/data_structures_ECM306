@@ -71,9 +71,29 @@ public class TestBinaryTree {
 
         tree.setRoot(new BinaryTreeNode<Integer>(1));
         assert !tree.isEmpty();
-
+        
         tree.setRoot(null);
         assert tree.isEmpty();
+    }
+    
+    @Test
+    @DisplayName("Teste - método Add")
+    void add(){
+        BinaryTree<Integer> tree = new BinaryTree<Integer>();
+        BinaryTreeNode<Integer> node = new BinaryTreeNode<Integer>(1);
+        tree.setRoot(node);
+        tree.add(2, node);
+        tree.add(3, node);
+        tree.add(4, node);
+        tree.add(5, node);
+
+        assert tree.getSize() == 5;
+        assert tree.getRoot().getValue() == 1;
+        assert tree.getRoot().getLeft().getValue() == 2;
+        assert tree.getRoot().getRight().getValue() == 3;
+        assert tree.getRoot().getLeft().getLeft().getValue() == 4;
+        assert tree.getRoot().getLeft().getRight().getValue() == 5;
+
     }
 
     @Test
