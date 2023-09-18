@@ -27,6 +27,17 @@ public class BinaryTreeNode<T> {
         this.right = right;
     }
 
+    public void add(T value){
+        if(this.left == null){
+            this.left = new BinaryTreeNode<T>(value);
+        }
+        else if(this.right == null){
+            this.right = new BinaryTreeNode<T>(value);
+        }
+        else{
+            this.left.add(value);
+        }
+    }
 
     public T getValue() {
         return value;

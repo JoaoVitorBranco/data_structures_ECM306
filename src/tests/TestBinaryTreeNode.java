@@ -35,6 +35,21 @@ public class TestBinaryTreeNode {
     }
 
     @Test
+    @DisplayName("Teste - Add")
+    public void testBinaryTreeNodeAdd(){
+        BinaryTreeNode<Integer> node = new BinaryTreeNode<Integer>(1);
+        node.add(2);
+        assert node.getLeft().getValue() == 2;
+        node.add(3);
+        assert node.getRight().getValue() == 3;
+        node.add(4);
+        assert node.getLeft().getLeft().getValue() == 4;
+        node.add(5);
+        assert node.getLeft().getRight().getValue() == 5;
+        node.add(6);
+    }
+
+    @Test
     @DisplayName("Teste - Has Left")
     void hasLeft() {
         BinaryTreeNode<Integer> node = new BinaryTreeNode<Integer>(1, new BinaryTreeNode<Integer>(2), new BinaryTreeNode<Integer>(3));
