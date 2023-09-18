@@ -4,7 +4,35 @@ public class BinaryTree<T> {
     /*
      * Class created by João Branco and Vitor Soller
      * Repository can be viewed at https://github.com/JoaoVitorBranco/data_structures_ECM306
+     
+     * Depth -> Profundidade
+     *      - tamanho da raiz até o nó
+     *
+     * Height -> Altura
+     *      - tamanho do nó até o nó de nível mais baixo
+     *
+     * TreeHeight -> Altura da árvore
+     *      - altura da raiz
+     *
+     * Empty -> Vazia
+     *      - árvore vazia
+     *
+     * Propper -> Própria
+     *     - SEMPRE tem 0 ou 2 filhos
+     *
+     * Impropper -> Imprópria
+     *      - Pelo menos um nó tem APENAS 1 filho
+     *
+     * minNodeCount -> Número mínimo de nós
+     *      - Menor quantidade de nós que uma árvore pode ter
+     *      - n = h + 1
+     *
+     * maxNodeCount -> Número máximo de nós
+     *     - Maior quantidade de nós que uma árvore pode ter
+     *    - n = 2^(h+1) - 1
+     *
      */
+
     private BinaryTreeNode<T> root;
     private int size;
 
@@ -224,6 +252,51 @@ public class BinaryTree<T> {
         return 0;
     }
 
+    public Boolean isProper() {
+        return isProper(this.root);
+    }
 
+//    **Própria**
+//
+//- tem 0 ou 2 filhos.
+//- nó interno tem 2 filhos
+//
+//Imprópria
+//
+//- Pelo menos um nó cm apenas um filho
+
+    public Boolean isProper(BinaryTreeNode<T> node) {
+        if (node != null) {
+            if (node.getLeft() != null && node.getRight() != null) {
+                return isProper(node.getLeft()) && isProper(node.getRight());
+            } else if (node.getLeft() == null && node.getRight() == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Boolean isImproper() {
+        return isImproper(this.root);
+    }
+
+    public Boolean isImproper(BinaryTreeNode<T> node) {
+        if (node != null) {
+            if (node.getLeft() != null && node.getRight() != null) {
+                return isImproper(node.getLeft()) || isImproper(node.getRight());
+            } else if (node.getLeft() == null && node.getRight() == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int minNodeCount(){
+        return getHeight(this.root) + 1;
+    }
+
+    public int maxNodeCount(){
+        return (int) Math.pow(2, getHeight() + 1) - 1;
+    }
 
 }

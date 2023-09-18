@@ -173,7 +173,7 @@ public class TestBinaryTree {
 
 
     @Test
-    @DisplayName("Teste - Cria uma árvore binária a partir de uma string")
+    @DisplayName("Teste - Cria uma árvore binária")
     void ex1(){
         BinaryTree<Integer> tree = new BinaryTree<Integer>(0, new BinaryTreeNode<Integer>(1), new BinaryTreeNode<Integer>(2, new BinaryTreeNode<Integer>(3, new BinaryTreeNode<Integer>(5), new BinaryTreeNode<Integer>(6)), new BinaryTreeNode<Integer>(4)));
 
@@ -186,5 +186,32 @@ public class TestBinaryTree {
         String inOrder = tree.inOrder();
         assert inOrder.equals("1 0 5 3 6 2 4 ");
     }
+
+    @Test
+    @DisplayName("Teste - É prórpia ou não")
+    void propperAndImpropper(){
+        BinaryTree<Integer> tree = new BinaryTree<>(0, new BinaryTreeNode<Integer>(1), new BinaryTreeNode<Integer>(2));
+        tree.getRoot().getLeft().setLeft(new BinaryTreeNode<Integer>(3));
+        assert !tree.isProper();
+        assert tree.isImproper();
+
+        tree = new BinaryTree<Integer>(0, new BinaryTreeNode<Integer>(1), new BinaryTreeNode<Integer>(2));
+        assert tree.isProper();
+        assert !tree.isImproper();
+    }
+
+    @Test
+    @DisplayName("Teste -Min and max node")
+    void minAndMaxNode(){
+        BinaryTreeNode<Integer> node = new BinaryTreeNode<Integer>(0);
+        node.setLeft(new BinaryTreeNode<Integer>(1));
+        node.getLeft().setRight(new BinaryTreeNode<Integer>(2));
+
+        BinaryTree<Integer> tree = new BinaryTree<Integer>(node);
+
+        assertEquals(3, tree.minNodeCount());
+        assertEquals(7, tree.maxNodeCount());
+    }
+
 
 }
