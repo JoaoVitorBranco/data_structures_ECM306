@@ -3,6 +3,10 @@ package main.Tree;
 import java.util.ArrayList;
 
 public class Tree<T> {
+    /*
+     * Class created by João Branco and Vitor Soller
+     * Repository can be viewed at https://github.com/JoaoVitorBranco/data_structures_ECM306
+     */g
 
     /*
      * Depth -> Profundidade 

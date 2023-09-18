@@ -3,6 +3,10 @@ import java.util.ArrayList;
 
 
 public class LinkedList<T> {
+    /*
+     * Class created by João Branco and Vitor Soller
+     * Repository can be viewed at https://github.com/JoaoVitorBranco/data_structures_ECM306
+     */
     private Node<T> head;
     private int len;
 

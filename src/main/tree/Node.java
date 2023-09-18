@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class Node<T>{
     /*
+     * Class created by João Branco and Vitor Soller
+     * Repository can be viewed at https://github.com/JoaoVitorBranco/data_structures_ECM306
+     */
+    /*
      * Sibling -> irmão
      *      - nós filhos do mesmo pai
      * 

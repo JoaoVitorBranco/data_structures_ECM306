@@ -5,6 +5,10 @@ import main.DoublyLinkedList.DoublyLinkedList;
 import main.LinkedList.LinkedList;
 
 public class Fifo<T> {
+    /*
+     * Class created by João Branco and Vitor Soller
+     * Repository can be viewed at https://github.com/JoaoVitorBranco/data_structures_ECM306
+     */
     private CircularDoublyLinkedList<T> circularStack;
     private DoublyLinkedList<T> doublyStack;
     private LinkedList<T> linkedStack;
