@@ -193,11 +193,12 @@ public class BinarySearchTree{
 
     public int pop(int value){
         BinarySearchTreeNode node = this.getNode(value);
+        int returned = value;
         if(node == null){
             return -1;
         }
-        else{
-            if(node.isLeaf()){
+        else{ 
+            if(node.isLeaf()){ // case 1: node is leaf
                 BinarySearchTreeNode parent = node.getParent();
                 if(parent == null){
                     this.root = null;
@@ -211,11 +212,41 @@ public class BinarySearchTree{
                     }
                 }
                 this.length--;
-                return value;
+            }
+            else if(node.getLeft() != null && node.getRight() == null){ // case 2A: node just have a left child
+                if(node.getParent() == null){
+                    this.root = node.getLeft();
+                }
+                else{
+                    if(node.getParent().getLeft() == node){
+                        node.getParent().setLeft(node.getLeft());
+                    }
+                    else{
+                        node.getParent().setRight(node.getLeft());
+                    }
+                    node.getLeft().setParent(node.getParent());
+                }
+                this.length--;
+            }
+            else if(node.getLeft() == null && node.getRight() != null){ // case 2B: node just have a right child
+                if(node.getParent() == null){
+                    this.root = node.getRight();
+                }
+                else{
+                    if(node.getParent().getLeft() == node){
+                        node.getParent().setLeft(node.getRight());
+                    }
+                    else{
+                        node.getParent().setRight(node.getRight());
+                    }
+                    node.getRight().setParent(node.getParent());
+                }
+                this.length--;
             }
             else{ // temp
-                return -1;
+                returned = -1;
             }
+            return returned;
         }
 
     }
