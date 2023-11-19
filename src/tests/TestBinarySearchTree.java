@@ -132,6 +132,10 @@ public class TestBinarySearchTree {
         tree.pop(1);
         assertEquals(9, tree.getLength());
         assertEquals(false, tree.isIn(1));
+
+        tree.pop(9);
+        assertEquals(8, tree.getLength());
+        assertEquals(false, tree.isIn(9));
     }
 
     @Test
