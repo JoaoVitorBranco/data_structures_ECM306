@@ -313,4 +313,188 @@ public class TestBinarySearchTree {
         tree.inOrder();
 
     }
+    @Test
+    public void testPopCase3_ex1(){
+        /*
+        Árvore:
+                    5
+                /      \    
+              3        10
+            /  \      /
+           2    4    7
+          /           \
+         1             8
+        /               \
+       0                 9
+
+        */
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.add(5);
+        tree.add(10);
+        tree.add(3);
+        tree.add(7);
+        tree.add(2);
+        tree.add(1);
+        tree.add(0);
+        tree.add(4);
+        tree.add(8);
+        tree.add(9);
+
+        // removing value 3
+        tree.pop(3);
+        assertEquals(9, tree.getLength());
+        assertEquals(false, tree.isIn(3));
+        
+        // print in order
+        tree.inOrder();
+
+    }
+
+    @Test
+    public void testPopCase3_ex2(){
+        /*
+        Árvore:
+                        50 
+                   /         \
+                 30           90
+              /     \       /   \
+          20         40   85     95
+        /   \       /  \
+      10     25   39    41
+
+        */
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.add(50);
+        tree.add(30);
+        tree.add(20);
+        tree.add(10);
+        tree.add(25);
+        tree.add(40);
+        tree.add(39);
+        tree.add(41);
+        tree.add(90);
+        tree.add(85);
+        tree.add(95);
+
+        // removing value 30
+        tree.pop(30);
+        assertEquals(10, tree.getLength());
+        assertEquals(false, tree.isIn(30));
+        
+        // print in order
+        tree.inOrder();
+
+    }
+    
+    @Test
+    public void testPopCase3_ex3(){
+        /*
+        Árvore:
+        5
+        /      \    
+        3        10
+            /  \      /
+           2    4    7
+           /           \
+           1             8
+           /               \
+           0                 9
+           
+           */
+          BinarySearchTree tree = new BinarySearchTree();
+          tree.add(5);
+          tree.add(10);
+          tree.add(3);
+          tree.add(7);
+          tree.add(2);
+          tree.add(1);
+          tree.add(0);
+          tree.add(4);
+          tree.add(8);
+          tree.add(9);
+          
+          // removing value 5
+          tree.pop(5);
+          assertEquals(9, tree.getLength());
+          assertEquals(false, tree.isIn(5));
+          
+          // print in order
+          tree.inOrder();
+
+        }
+    @Test
+    public void testPopCase3_ex4(){
+        /*
+        Árvore:
+                        
+                        8
+                    /       \
+                   3          11
+                /   \     /      \
+              1     5    9       14
+                     \    \     /  \
+                      6   10  12   15
+                       \        \
+                        7       13
+        */
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.add(8);
+        tree.add(3);
+        tree.add(1);
+        tree.add(5);
+        tree.add(6);
+        tree.add(7);
+        tree.add(11);
+        tree.add(9);
+        tree.add(10);
+        tree.add(14);
+        tree.add(12);
+        tree.add(13);
+        tree.add(15);
+
+
+        // removing value 11
+        tree.pop(11);
+        assertEquals(12, tree.getLength());
+        assertEquals(false, tree.isIn(11));
+        
+        // print in order
+        tree.inOrder();
+
+    }
+    @Test
+    public void testPopCase3_ex5(){
+        /*
+        Árvore:
+                        
+                            50
+                          /   \
+                        30    100
+                      /   \ 
+                    20    40
+                        /   \
+                      35     45 
+                        \ 
+                        37
+        */
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.add(50);
+        tree.add(30);
+        tree.add(20);
+        tree.add(40);
+        tree.add(35);
+        tree.add(37);
+        tree.add(45);
+        tree.add(100);
+
+        // removing value 30
+        tree.pop(30);
+        assertEquals(7, tree.getLength());
+        assertEquals(false, tree.isIn(30));
+        
+        // print in order
+        tree.inOrder();
+
+    }
 }
+    

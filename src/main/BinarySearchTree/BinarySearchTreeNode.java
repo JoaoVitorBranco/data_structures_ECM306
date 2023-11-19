@@ -161,6 +161,15 @@ public class BinarySearchTreeNode {
         }
     }
 
+    public BinarySearchTreeNode getSmaller(){
+        if(this.left == null){
+            return this;
+        }
+        else{
+            return this.left.getSmaller();
+        }
+    }
+
     public int sum(){
         int total = this.value;
         if(this.left != null){

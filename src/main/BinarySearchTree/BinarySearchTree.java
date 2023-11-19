@@ -195,7 +195,7 @@ public class BinarySearchTree{
         BinarySearchTreeNode node = this.getNode(value);
         int returned = value;
         if(node == null){
-            return -1;
+            returned = -1;
         }
         else{ 
             if(node.isLeaf()){ // case 1: node is leaf
@@ -243,11 +243,38 @@ public class BinarySearchTree{
                 }
                 this.length--;
             }
-            else{ // temp
-                returned = -1;
-            }
-            return returned;
-        }
+            else{ // case 3: node have two children
+                BinarySearchTreeNode smaller = node.getRight().getSmaller();
+                BinarySearchTreeNode smallersParent = smaller.getParent();
+                BinarySearchTreeNode smallersRightChild = smaller.getRight();
+                BinarySearchTreeNode nodeParent = node.getParent();
 
+                smaller.setLeft(node.getLeft());
+                if(smallersParent == node){
+                    node.getLeft().setParent(smaller);
+                }
+                else{
+                    smallersParent.setLeft(smallersRightChild);
+                    if(smallersRightChild != null){
+                        smallersRightChild.setParent(smallersParent);
+                    }
+                    smaller.setRight(node.getRight());
+
+                }
+
+                if(nodeParent == null){
+                    this.root = smaller;
+                }
+                else if(nodeParent.getLeft() == node){
+                    nodeParent.setLeft(smaller);
+                }
+                else{
+                    nodeParent.setRight(smaller);
+                }
+                smaller.setParent(nodeParent);
+                this.length--;
+            }
+        }
+        return returned;
     }
 }
