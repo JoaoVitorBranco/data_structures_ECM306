@@ -24,6 +24,7 @@ public class LinkedList<T> {
      * addFirst(T head_val)
      * T popFirst()
      * T popLast()
+     * int find(int value)
      */
 
     public LinkedList(){
@@ -209,5 +210,29 @@ public class LinkedList<T> {
         aux.setNext(null);
         this.len--;
         return next.getValue();
+    }
+
+    public boolean isIn(T value){
+        Node<T> aux = this.head;
+        while(aux != null){
+            if(aux.getValue() == value){
+                return true;
+            }
+            aux = aux.getNext();
+        }
+        return false;
+    }
+
+    public int find(T value){
+        Node<T> aux = this.head;
+        int idx = 0;
+        while(aux != null){
+            if(aux.getValue() == value){
+                return idx;
+            }
+            aux = aux.getNext();
+            idx++;
+        }
+        return -1;
     }
 }
