@@ -8,6 +8,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestBinaryTree {
+    public static void main(String[] args) {
+        BinaryTree<Integer> tree = new BinaryTree<Integer>();
+    }
+
+    public static void p3(){
+
+    }
 
     @Test
     @DisplayName("Teste - Criação da Árvore Binária")

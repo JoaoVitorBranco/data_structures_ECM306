@@ -13,7 +13,20 @@ import main.Tree.Tree;
 
 public class TestTree{
     public static void main(String[] args) {
-        testTreeDefaultFunctions();
+        // testTreeDefaultFunctions();
+        p3();
+    }
+
+    public static void p3(){
+        Node<Integer> n1 = new Node<Integer>(1); 
+        Tree<Integer> tree = new Tree<Integer>(n1);
+        tree.addChild(n1, 2);
+        tree.addChild(n1.getFirstChild(), 3);
+        tree.addChild(n1.getFirstChild(), 4);
+        tree.addChild(n1, 5);
+        tree.addChild(n1.getFirstChild().getNextSibling(), 6);
+        tree.addChild(n1.getFirstChild().getNextSibling().getFirstChild(), 7);
+        tree.addChild(n1.getFirstChild().getFirstChild(), 8);
     }
 
     public static void testTreeDefaultFunctions(){
