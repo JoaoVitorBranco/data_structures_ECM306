@@ -133,4 +133,27 @@ public class TestBinarySearchTree {
         assertEquals(9, tree.getLength());
         assertEquals(false, tree.isIn(1));
     }
+
+    @Test
+    public void testPopCase1_RemovingRootLeaf(){
+        /*
+        Árvore:
+                    5
+                /      \    
+            0              10
+             \            /
+              3         7
+             / \         \
+            2   4         8
+           /               \
+          1                 9
+
+        */
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.add(5);
+
+        tree.pop(5);
+        assertEquals(0, tree.getLength());
+        assertEquals(false, tree.isIn(5));
+    }
 }

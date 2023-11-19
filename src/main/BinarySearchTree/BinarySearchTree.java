@@ -139,6 +139,9 @@ public class BinarySearchTree{
     }
     
     public boolean isIn(int value){
+        if(this.root == null){
+            return false;
+        }
         return this.root.isIn(value);
     }
 
