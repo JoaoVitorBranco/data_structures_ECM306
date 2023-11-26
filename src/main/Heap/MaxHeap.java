@@ -6,7 +6,23 @@ public class MaxHeap{
     Class created by João Branco and Vitor Soller
     Repository can be viewed at https://github.com/JoaoVitorBranco/data_structures_ECM306
     
-    Métodos
+    # Teoria
+    Estrutura de dados que representa uma árvore binária completa ou quase completa
+    - Árvore é completa até o penúltimo nível
+    - No último nível, as folhas estão o mais à esquerda  possível
+    - Conteúdo de um nó é maior ou igual (max-heap) ao conteúdo dos nós na subárvore enraizada nele
+
+    # Níveis de um Heap
+    Cada nível p (começando do 0) tem 2^p nós, menos o último nível
+
+    # Altura de nós
+    Para um nó 'i' (idx na lista, começando do 1), e 'm' sendo o número de nós:
+    h = ceil(log_2(m/i))
+
+    # Complexidade do algoritmo Max/Min-Heapify
+    O(log m)
+
+    # Métodos
     private ArrayList<Integer> arr
     public Heap(int[] arr)
     private void heapifySubtree(int idxParent)
@@ -123,6 +139,7 @@ public class MaxHeap{
     }
 
     public int parentIdx(int idx){
+        if(idx == 0) return -1;
         return idx / 2;
     }
 

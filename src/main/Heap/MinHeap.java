@@ -6,7 +6,15 @@ public class MinHeap{
     Class created by João Branco and Vitor Soller
     Repository can be viewed at https://github.com/JoaoVitorBranco/data_structures_ECM306
     
-    Métodos
+    # Teoria
+    Estrutura de dados que representa uma árvore binária completa ou
+    quase completa
+    - Árvore é completa até o penúltimo nível
+    - No último nível, as folhas estão o mais à esquerda possível
+    - Conteúdo de um nó é menor ou igual (min-heap) ao conteúdo dos 
+    nós na subárvore enraizada nele
+
+    # Métodos
     private ArrayList<Integer> arr
     public Heap(int[] arr)
     private void heapifySubtree(int idxParent)

@@ -51,8 +51,9 @@ public class BinarySearchTree{
      *      - n = h + 1
      *
      * maxNodeCount -> Número máximo de nós
-     *     - Maior quantidade de nós que uma árvore pode ter
-     *    - n = 2^(h+1) - 1
+     *      - Árvore Binária Completa
+     *      - Maior quantidade de nós que uma árvore pode ter
+     *      - n = 2^(h+1) - 1
      *
      */
 

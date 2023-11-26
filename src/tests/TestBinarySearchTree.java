@@ -99,7 +99,10 @@ public class TestBinarySearchTree {
         
         System.out.println("\n====== Ex13 - método \"getSum\" ======");
         System.out.println("A soma dos nós na árvore deve ser 60: " +  String.valueOf(tree.getSum() == 60));
-    }   
+
+        System.out.println("\n====== Ex14 - método \"leafsCount\" ======");
+        System.out.println("Número de folhas deve ser 4: " + String.valueOf(tree.leafsCount() == 4));
+      }    
 
 
     @Test
